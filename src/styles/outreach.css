@@ -1,0 +1,402 @@
+/* ==================================================================================
+   UNIFIED SITE STYLES (derived from `testimonials.css` & `awards.css`)
+   Applied to: admin.css, common.css, lectures.css, login.css, outreach.css, page.css, research.css
+   `testimonials.css` and `awards.css` remain unchanged as requested.
+   ================================================================================== */
+
+:root {
+  --primary-blue: #3b82f6;
+  --primary-blue-dark: #2563eb;
+  --accent-orange: #f97316;
+  --accent-green: #10b981;
+  --accent-gold: #f59e0b;
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-900: #111827;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+  --shadow-hover: 0 20px 25px -5px rgba(0,0,0,0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { box-sizing: border-box; }
+
+/* Outreach page wrapper (shared) */
+.outreach-page, .page { max-width: 1200px; margin:0 auto; padding:3rem 1.5rem; }
+
+.outreach-header { text-align: center; margin: 0 0 3rem 0; padding: 1.5rem 0 2rem 0; border-bottom: 2px solid var(--neutral-200); }
+.outreach-header h1 { font-size: 2.5rem; font-weight:700; color:var(--neutral-900); margin:0 0 0.5rem 0; }
+
+.header { text-align:center; margin-bottom:3rem; }
+.header h1 { font-size: 2.5rem; font-weight:700; color:var(--neutral-900); margin:0 0 0.5rem 0; }
+
+/* Cards & grids */
+.grid { display:grid; gap:1.5rem; }
+.card { background:white; border:1px solid var(--neutral-200); border-radius:var(--border-radius); padding:1.5rem; box-shadow:var(--shadow-sm); transition:var(--transition); }
+.card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); border-color:var(--primary-blue); }
+
+/* Buttons */
+.btn { padding:0.875rem 1.25rem; border-radius:8px; border:none; font-weight:500; cursor:pointer; transition:var(--transition); }
+.btn-primary { background:var(--primary-blue); color:white; }
+.btn-primary:hover { background:var(--primary-blue-dark); transform:translateY(-2px); box-shadow:var(--shadow-md); }
+.btn-secondary { background:var(--accent-gold); color:white; }
+.btn-danger { background:#ef4444; color:white; }
+
+/* Forms */
+.form-card { background:white; border:1px solid var(--neutral-200); border-radius:8px; padding:1.75rem; box-shadow:var(--shadow-md); }
+.form-input, .form-textarea { width:100%; padding:0.75rem; border:2px solid var(--neutral-300); border-radius:8px; }
+.form-file { padding:0.75rem; border:2px dashed var(--neutral-300); background:var(--neutral-50); }
+
+/* Cards specifics */
+.outreach-admin-card, .outreach-admin-image, .outreach-admin-content { /* keep structure but unified look */ }
+
+/* Empty state */
+.empty-state { text-align:center; padding:3rem 2rem; background:white; border-radius:var(--border-radius); border:2px dashed var(--neutral-300); }
+
+/* Utilities */
+.text-muted { color:var(--neutral-600); }
+.small { font-size:0.875rem; }
+
+
+.outreach-intro {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--neutral-900);
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* Category Sections */
+
+.outreach-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.outreach-category-section {
+  margin-bottom: 1rem;
+}
+
+.category-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Accordion List */
+
+.outreach-accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.outreach-accordion-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.outreach-accordion-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Accordion Header */
+
+.accordion-header {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  transition: background 0.2s ease;
+  text-align: left;
+}
+
+.accordion-header:hover {
+  background: #f8fafc;
+}
+
+.accordion-header-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.accordion-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.accordion-date {
+  font-size: 0.875rem;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.accordion-icon {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3b82f6;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eff6ff;
+  border-radius: 50%;
+}
+
+/* Accordion Body */
+
+.accordion-body {
+  padding: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordion-image-wrapper {
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.accordion-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.accordion-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0 0 1.5rem 0;
+}
+
+.accordion-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #10b981;
+  background: #d1fae5;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .outreach-intro {
+    font-size: 1rem;
+  }
+}
+}
+
+.accordion-pdf-link:hover {
+  background: #a7f3d0;
+  color: #059669;
+  transform: translateY(-1px);
+}
+
+.pdf-icon {
+  font-size: 1.125rem;
+}
+
+/* Empty State - Public */
+
+.empty-state-public {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.empty-state-public p {
+  font-size: 1.0625rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Loading State */
+
+.loading-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1rem;
+  color: #64748b;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 992px) {
+  .outreach-admin-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-outreach-container,
+  .outreach-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .admin-outreach-header h1,
+  .outreach-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .admin-subtitle,
+  .outreach-intro {
+    font-size: 0.9375rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .form-card {
+    padding: 1.25rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .form-row .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .outreach-admin-actions {
+    flex-direction: column;
+  }
+
+  .outreach-admin-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .outreach-admin-image {
+    height: 200px;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+
+  .accordion-header {
+    padding: 1rem;
+  }
+
+  .accordion-header-content {
+    gap: 0.375rem;
+  }
+
+  .accordion-title {
+    font-size: 1rem;
+  }
+
+  .accordion-body {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-outreach-header h1,
+  .outreach-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-card {
+    padding: 1rem;
+  }
+
+  .outreach-admin-card {
+    margin-bottom: 0;
+  }
+
+  .outreach-admin-content {
+    padding: 1rem;
+  }
+
+  .accordion-header {
+    padding: 0.875rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .accordion-icon {
+    align-self: flex-end;
+  }
+
+  .accordion-image {
+    max-height: 250px;
+  }
+}
+body { 
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; 
+  background: 
+    linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(96, 165, 250, 0.08) 0%, transparent 50%),
+    linear-gradient(to bottom, #f0f9ff, #e0f2fe, #ffffff);
+  background-attachment: fixed;
+  color: var(--neutral-900); 
+  min-height: 100vh;
+  position: relative;
+}

@@ -1,0 +1,408 @@
+/* ==================================================================================
+   UNIFIED SITE STYLES (derived from `testimonials.css` & `awards.css`)
+   Applied to: admin.css, common.css, lectures.css, login.css, outreach.css, page.css, research.css
+   `testimonials.css` and `awards.css` remain unchanged as requested.
+   ================================================================================== */
+
+:root {
+  --primary-blue: #3b82f6;
+  --primary-blue-dark: #2563eb;
+  --accent-orange: #f97316;
+  --accent-green: #10b981;
+  --accent-gold: #f59e0b;
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-900: #111827;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+  --shadow-hover: 0 20px 25px -5px rgba(0,0,0,0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { box-sizing: border-box; }
+
+/* Research & admin wrappers */
+.research-page, .admin-research-container { max-width: 1200px; margin:0 auto; padding:2rem 1.5rem; }
+.header { text-align:center; margin-bottom:2.5rem; }
+.header h1 { font-size:2.5rem; font-weight:700; color:var(--neutral-900); }
+
+/* Scholar link-only container (no iframe preview) */
+.scholar-container--link-only { display:flex; justify-content:flex-end; align-items:center; background:transparent; border:none; box-shadow:none; padding:0; }
+
+/* Scholar link styles */
+.scholar-link { display:inline-block; padding:0.75rem 1rem; text-align:center; font-size:0.9375rem; font-weight:600; color:var(--primary-blue); background:#f8fafc; border-radius:8px; margin:0.5rem 0; text-decoration:none; transition:all 0.2s ease; }
+.scholar-link:hover { background:#eff6ff; color:var(--primary-blue-dark); }
+
+/* Cards & lists */
+.research-list, .patent-grid { display:flex; flex-direction:column; gap:1.25rem; }
+.card { background:white; border:1px solid var(--neutral-200); border-radius:var(--border-radius); padding:1.5rem; box-shadow:var(--shadow-sm); transition:var(--transition); }
+.card:hover { box-shadow:var(--shadow-lg); transform:translateY(-2px); border-color:var(--primary-blue); }
+
+/* Buttons & badges */
+.btn { padding:0.875rem 1.25rem; border-radius:8px; border:none; font-weight:500; }
+.pdf-badge, .patent-year-badge { font-size:0.875rem; font-weight:600; padding:0.25rem 0.75rem; border-radius:12px; }
+.pdf-badge { color:var(--accent-green); background: #d1fae5; }
+.patent-year-badge { color:var(--primary-blue); background: #dbeafe; }
+
+/* Forms */
+.form-card { border:1px solid var(--neutral-200); border-radius:8px; padding:1.75rem; }
+.form-input, .form-textarea { width:100%; padding:0.75rem; border:2px solid var(--neutral-300); border-radius:8px; }
+
+/* Utility */
+.empty-state { padding:3rem 2rem; background:white; border-radius:var(--border-radius); border:2px dashed var(--neutral-300); text-align:center; }
+.text-muted { color:var(--neutral-600); }
+
+@media (max-width:768px) { .admin-research-container, .research-page { padding:1.5rem; } .card { padding:1.25rem; } }
+
+.research-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--neutral-200);
+}
+
+.research-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--neutral-900);
+  margin: 0 0 0.5rem 0;
+}
+
+.research-intro {
+  font-size: 1.25rem;
+  color: var(--neutral-900);
+  margin: 0;
+}
+
+.patent-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.patent-card-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.patent-year {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #3b82f6;
+  background: #dbeafe;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.patent-card-content p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0;
+}
+
+.patent-card-footer {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.patent-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #10b981;
+  background: #d1fae5;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.patent-pdf-link:hover {
+  background: #a7f3d0;
+  color: #059669;
+  transform: translateY(-1px);
+}
+
+.pdf-icon {
+  font-size: 1.125rem;
+}
+
+/* Empty State - Public */
+
+.empty-state-section {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.empty-state-section p {
+  font-size: 0.9375rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.empty-state-public {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.empty-state-public p {
+  font-size: 1.0625rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Loading State */
+
+.loading-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1rem;
+  color: #64748b;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 768px) {
+  .admin-research-container,
+  .research-page {
+    padding: 1.5rem 1rem;
+  }
+
+  .admin-research-header h1,
+  .research-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .admin-subtitle,
+  .research-intro {
+    font-size: 1rem;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .form-card {
+    padding: 1.25rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .research-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .research-card-actions {
+    flex-direction: column;
+  }
+
+  .research-card-actions .btn {
+    width: 100%;
+  }
+
+  .section-title-wrapper h2 {
+    font-size: 1.5rem;
+  }
+
+  .patent-card {
+    padding: 1.5rem;
+  }
+
+  .patent-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .patent-card-header h3 {
+    font-size: 1.125rem;
+  }
+
+  .scholar-frame {
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-research-header h1,
+  .research-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-card {
+    padding: 1rem;
+  }
+
+  .research-card,
+  .patent-card {
+    padding: 1.25rem;
+  }
+
+  .scholar-frame {
+    height: 400px;
+  }
+}
+/* Update card header title */
+.patent-card-header h3 {
+  font-size: 1.125rem; /* Changed from 1.25rem to match testimonial-title */
+  font-weight: 600;
+  color: var(--neutral-900); /* Changed from #1e293b */
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* Update patent year badge to match category-badge style */
+.patent-year {
+  font-size: 0.75rem; /* Changed from 0.875rem */
+  font-weight: 500; /* Changed from 600 */
+  color: white; /* Changed from #3b82f6 */
+  background: var(--accent-green); /* Changed from #dbeafe */
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+/* Update card content paragraph */
+.patent-card-content p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--neutral-600); /* Changed from #475569 */
+  margin: 0;
+}
+
+/* Update card footer border */
+.patent-card-footer {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--neutral-200); /* Changed from #f1f5f9 */
+}
+
+/* Update PDF link to match view-pdf-btn style */
+.patent-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem; /* Match view-pdf-btn padding */
+  font-size: 0.9375rem;
+  font-weight: 500; /* Changed from 600 */
+  color: white; /* Changed from #10b981 */
+  background: var(--primary-blue); /* Changed from #d1fae5 */
+  border-radius: 8px; /* Changed from 6px */
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.patent-pdf-link:hover {
+  background: var(--primary-blue-dark); /* Changed from #a7f3d0 */
+  color: white; /* Changed from #059669 */
+  transform: translateY(-2px); /* Changed from -1px */
+  box-shadow: var(--shadow-md); /* Added */
+}
+
+/* Update empty state section */
+.empty-state-section {
+  background: white; /* Changed from #f8fafc */
+  border: 2px dashed var(--neutral-300); /* Changed from #cbd5e1 */
+  border-radius: var(--border-radius); /* Changed from 8px */
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.empty-state-section p {
+  font-size: 0.9375rem;
+  color: var(--neutral-600); /* Changed from #64748b */
+  margin: 0;
+}
+
+/* Update empty state public */
+.empty-state-public {
+  background: white; /* Changed from #f8fafc */
+  border: 2px dashed var(--neutral-300); /* Changed from #cbd5e1 */
+  border-radius: var(--border-radius); /* Changed from 8px */
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.empty-state-public p {
+  font-size: 1.125rem; /* Changed from 1.0625rem */
+  color: var(--neutral-600); /* Changed from #64748b */
+  margin: 0;
+}
+
+/* Update loading state */
+.loading-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1rem;
+  color: var(--neutral-600); /* Changed from #64748b */
+}
+.section-title-wrapper h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--primary-blue);
+  display: inline-block;
+}
+
+/* Also for patent section if it has a separate title class */
+.patent-section h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--neutral-900);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--primary-blue);
+  display: inline-block;
+}
+body { 
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; 
+  background: 
+    linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(96, 165, 250, 0.08) 0%, transparent 50%),
+    linear-gradient(to bottom, #f0f9ff, #e0f2fe, #ffffff);
+  background-attachment: fixed;
+  color: var(--neutral-900); 
+  min-height: 100vh;
+  position: relative;
+}

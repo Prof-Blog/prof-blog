@@ -1,0 +1,49 @@
+/* ==================================================================================
+   UNIFIED SITE COMMON STYLES (based on testimonials & awards)
+   This file centralizes shared variables and utility classes.
+   ================================================================================== */
+
+:root {
+  --primary-blue: #3b82f6;
+  --primary-blue-dark: #2563eb;
+  --accent-orange: #f97316;
+  --accent-green: #10b981;
+  --accent-gold: #f59e0b;
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-900: #111827;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { box-sizing: border-box; }
+
+/* Utility classes */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.text-muted { color: var(--neutral-600); }
+.small { font-size: 0.875rem; }
+.btn { padding: 0.875rem 1.25rem; border-radius: 8px; }
+.btn-primary { background: var(--primary-blue); color: #fff; }
+.btn-secondary { background: var(--accent-gold); color: #fff; }
+
+/* Shared UI patterns */
+.card { background: white; border: 1px solid var(--neutral-200); border-radius: var(--border-radius); padding: 1.5rem; box-shadow: var(--shadow-sm); }
+.empty-state { text-align:center; padding:3rem 2rem; background:white; border-radius:var(--border-radius); border:2px dashed var(--neutral-300); }
+body { 
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; 
+  background: 
+    linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(96, 165, 250, 0.08) 0%, transparent 50%),
+    linear-gradient(to bottom, #f0f9ff, #e0f2fe, #ffffff);
+  background-attachment: fixed;
+  color: var(--neutral-900); 
+  min-height: 100vh;
+  position: relative;
+}

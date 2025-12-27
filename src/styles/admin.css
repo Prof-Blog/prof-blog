@@ -1,0 +1,108 @@
+/* ==================================================================================
+   UNIFIED SITE STYLES (derived from `testimonials.css` & `awards.css`)
+   Applied to: admin.css, common.css, lectures.css, login.css, outreach.css, page.css, research.css
+   `testimonials.css` and `awards.css` remain unchanged as requested.
+   ================================================================================== */
+
+:root {
+  --primary-blue: #3b82f6;
+  --primary-blue-dark: #2563eb;
+  --accent-orange: #f97316;
+  --accent-green: #10b981;
+  --accent-gold: #f59e0b;
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-900: #111827;
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+  --shadow-hover: 0 20px 25px -5px rgba(0,0,0,0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+* { box-sizing: border-box; }
+
+/* =====================================
+   Layout & Containers
+   ===================================== */
+.container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 0 1.5rem; }
+.admin-container { max-width: 1400px; margin: 0 auto; padding: 2rem 1.5rem; }
+.section { padding: 2rem 0; }
+.header { text-align: center; margin-bottom: 3rem; }
+.header h1 { font-size: 2.5rem; font-weight: 700; color: var(--neutral-900); margin: 0 0 0.5rem 0; }
+.header p { font-size: 1.125rem; color: var(--neutral-600); margin: 0; }
+
+/* =====================================
+   Cards & Grids
+   ===================================== */
+.grid { display: grid; gap: 1.5rem; }
+.grid-columns-3 { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.grid-columns-4 { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.card { background: white; border: 1px solid var(--neutral-200); border-radius: var(--border-radius); padding: 1.5rem; box-shadow: var(--shadow-sm); transition: var(--transition); }
+.card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--primary-blue); }
+
+/* =====================================
+   Buttons
+   ===================================== */
+.btn { padding: 0.875rem 1.25rem; border: none; border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; gap: 0.5rem; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--primary-blue); color: white; }
+.btn-primary:hover:not(:disabled) { background: var(--primary-blue-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-secondary { background: var(--accent-gold); color: white; }
+.btn-secondary:hover { background: #d97706; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-danger { background: #ef4444; color: white; }
+.btn-link { background: transparent; color: var(--accent-green); padding: 0.5rem 1rem; text-decoration: none; display: inline-block; font-weight: 600; }
+
+/* =====================================
+   Forms
+   ===================================== */
+.form-card { background: white; border-radius: var(--border-radius); padding: 1.75rem; box-shadow: var(--shadow-md); border: 1px solid var(--neutral-200); }
+.form-group { margin-bottom: 1.25rem; }
+.form-group label { display:block; font-size:0.9375rem; font-weight:500; color:var(--neutral-700); margin-bottom:0.5rem; }
+.form-input, .form-textarea { width:100%; padding:0.75rem 1rem; border: 2px solid var(--neutral-300); border-radius:8px; font-size:1rem; transition:var(--transition); background: white; }
+.form-input:focus, .form-textarea:focus { outline: none; border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(59,130,246,0.08); }
+.form-file { width:100%; padding:0.75rem; border:2px dashed var(--neutral-300); border-radius:8px; background: var(--neutral-50); cursor:pointer; }
+.form-file:hover { border-color: var(--primary-blue); background: white; }
+.file-name { display:flex; gap:0.5rem; margin-top:0.75rem; padding:0.75rem; background:var(--neutral-100); border-radius:6px; font-size:0.875rem; color:var(--neutral-700); }
+
+/* =====================================
+   Empty States & placeholders
+   ===================================== */
+.empty-state { text-align:center; padding:4rem 2rem; background:white; border-radius:var(--border-radius); border:2px dashed var(--neutral-300); }
+.empty-state svg { width:64px; height:64px; color:var(--neutral-400); margin-bottom:1rem; }
+.empty-state p { font-size:1.125rem; color:var(--neutral-600); margin:0; }
+
+/* =====================================
+   Modal / Overlays
+   ===================================== */
+.modal { position:fixed; inset:0; background: rgba(0,0,0,0.75); display:flex; align-items:center; justify-content:center; padding:2rem; z-index:1000; }
+.modal .modal-content { background:white; border-radius:var(--border-radius); max-width:900px; width:100%; max-height:90vh; overflow:auto; }
+.modal .modal-close { position:absolute; top:1rem; right:1rem; width:40px; height:40px; border-radius:50%; background:white; border:none; box-shadow:var(--shadow-md); }
+
+/* =====================================
+   Admin specifics
+   ===================================== */
+.admin-header { margin-bottom:2.5rem; }
+.admin-header h1 { font-size:2.25rem; font-weight:700; color:var(--neutral-900); margin:0 0 0.5rem 0; }
+.admin-subtitle { font-size:1rem; color:var(--neutral-600); }
+
+/* Utility */
+.text-muted { color: var(--neutral-600); }
+.small { font-size: 0.875rem; }
+
+body { 
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; 
+  background: 
+    linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(96, 165, 250, 0.08) 0%, transparent 50%),
+    linear-gradient(to bottom, #f0f9ff, #e0f2fe, #ffffff);
+  background-attachment: fixed;
+  color: var(--neutral-900); 
+  min-height: 100vh;
+  position: relative;
+}
